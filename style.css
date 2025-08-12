@@ -472,6 +472,12 @@
     gap: 12px;
 }
 
+.content-check-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* Custom Dropdown */
 .custom-select {
     width: 130px;
