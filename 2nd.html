@@ -48,6 +48,7 @@
               <div class="option">200+</div>
             </div>
           </div>
+          
         </div>
       </div>
 
@@ -57,10 +58,10 @@
           <div class="content-grid-1">
             <div class="payroll-tabs-container">
               <span class="tabs-structure tabs-1 active" data-plan="weekly">Weekly</span>
-              <span class="tabs-structure tabs-2" data-plan="bi-weekly">Bi-Weekly</span>
-              <span class="tabs-structure tabs-3" data-plan="semi-monthly">Semi-Monthly</span>
-              <span class="tabs-structure tabs-3" data-plan="semi-monthly">Monthly</span>
-              <span class="tabs-structure tabs-3" data-plan="semi-monthly">Quarterly</span>
+              <span class="tabs-structure tabs-2" data-plan="biweekly">Bi-Weekly</span>
+              <span class="tabs-structure tabs-3" data-plan="monthly">Semi-Monthly</span>
+              <span class="tabs-structure tabs-3" data-plan="monthly">Monthly</span>
+              <span class="tabs-structure tabs-3" data-plan="monthly">Quarterly</span>
             </div>
           </div>
 
@@ -464,6 +465,9 @@
 
           </div>
         </div>
+
+
+
 
 
         <div class="content-info-main-grid">
@@ -939,7 +943,7 @@
         "150 – 199": { essential: 4, peo: 12, geofencing: { left: 18, right: 18 } },
         "200+": { essential: null, peo: null, geofencing: { left: 20, right: 20 } },
       },
-      "bi-weekly": {
+      biweekly: {
         "1 – 9": { essential: 12, peo: 35, geofencing: { left: 28, right: 28 } },
         "10 – 24": { essential: 11, peo: 33, geofencing: { left: 25, right: 25 } },
         "25 – 49": { essential: 11, peo: 49, geofencing: { left: 23, right: 23 } },
@@ -948,7 +952,7 @@
         "150 – 199": { essential: 8, peo: 25, geofencing: { left: 20, right: 20 } },
         "200+": { essential: null, peo: null, geofencing: { left: 18, right: 18 } },
       },
-      "semi-monthly": { // NEW
+      monthly: { // NEW
         "1 – 9": { essential: 20, peo: 50, geofencing: { left: 30, right: 30 } },
         "10 – 24": { essential: 18, peo: 45, geofencing: { left: 28, right: 28 } },
         "25 – 49": { essential: 17, peo: 43, geofencing: { left: 26, right: 26 } },
@@ -976,15 +980,8 @@
     let currentRange = document.querySelector(".custom-select .selected-text").innerText.trim();
 
     // Function to update heading
-    function capitalizeWords(str) {
-      return str
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join('-');
-    }
-
     function updatePlanHeading() {
-      planHeadingEl.textContent = capitalizeWords(currentPlan);
+      planHeadingEl.textContent = currentPlan.replace(/^\w/, c => c.toUpperCase());
     }
 
     // Function to update prices dynamically
