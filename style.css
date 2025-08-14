@@ -99,14 +99,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
 .content-pricing-flex span:first-child,
 .content-pricing-flex span:nth-child(2) {
     font-size: 24px;
@@ -252,19 +244,6 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .content-info-check-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -294,16 +273,11 @@
     .content-info-check-grid {
         height: auto;
     }
+
+    .content-info-check-1, .content-info-check-2 {
+        padding: 16px 16px;
+    }
 }
-
-
-
-
-
-
-
-
-
 
 .content-info-check-1,
 .content-info-check-2 {
